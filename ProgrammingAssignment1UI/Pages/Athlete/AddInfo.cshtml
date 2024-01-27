@@ -1,0 +1,24 @@
+﻿@page
+@model ProgrammingAssignment1UI.Pages.Athlete.AddInfoModel
+@{
+}
+
+<h1>Marathon Registration Form</h1>
+
+<div id="marthon-form">
+	Cross post to the index page
+	<form method="post" asp-page="Index">
+		<label asp-for="CurrentAthlete.Name"></label>
+		<input type="text" asp-for="CurrentAthlete.Name" />
+		<label asp-for="CurrentAthlete.Email"></label>
+		<input type="text" asp-for="CurrentAthlete.Email" />
+		<label asp-for="CurrentAthlete.PhoneNumber"></label>
+		<input type="text" asp-for="CurrentAthlete.PhoneNumber" />
+		<label asp-for="CurrentAthlete.Birthday"></label>
+		<input type="date" asp-for="CurrentAthlete.Birthday" />
+		<label asp-for="CurrentAthlete.Gender"></label>
+		<input type="text" asp-for="CurrentAthlete.Gender" />
+
+		<input type="submit" />
+	</form>
+</div>

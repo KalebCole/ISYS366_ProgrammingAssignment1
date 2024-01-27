@@ -1,0 +1,12 @@
+﻿@page
+@model ProgrammingAssignment1UI.Pages.Athlete.IndexModel
+@{
+}
+
+<h1>Current Athletes Registered</h1>
+
+@if(!string.IsNullOrEmpty(Model.CurrentAthlete.Name))
+{
+	<p>Name: @Model.CurrentAthlete.Name</p>
+	<p>Age@Model.CurrentAthlete.Birthday</p>
+}
