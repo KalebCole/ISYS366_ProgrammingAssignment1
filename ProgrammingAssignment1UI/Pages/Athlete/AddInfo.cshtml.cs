@@ -7,27 +7,30 @@ namespace ProgrammingAssignment1UI.Pages.Athlete
     public class AddInfoModel : PageModel
     {
 		private readonly ILogger<AddInfoModel> _logger;
-		[BindProperty(SupportsGet = true)]
-		public AthleteInfo CurrentAthlete { get; set; } = new AthleteInfo();
-		public AddInfoModel(ILogger<AddInfoModel> logger)
+        [BindProperty(SupportsGet = true)]
+        public AthleteInfo CurrentAthlete { get; set; } = new AthleteInfo();
+
+        [BindProperty(SupportsGet = true)]
+        public int NumFromIndex { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? WordFromIndex { get; set; }
+        public AddInfoModel(ILogger<AddInfoModel> logger)
 		{
 			_logger = logger;
 		}
 		public void OnGet()
 		{
-		}
+            LogInformation("OnGet");
+
+        }
 
 		public IActionResult OnPost()
 		{
-			_logger.LogInformation("AddInfo OnPost called");
-			_logger.LogInformation($"Name: {CurrentAthlete.Name}");
-			_logger.LogInformation($"Email: {CurrentAthlete.Email}");
-			_logger.LogInformation($"Phone Number : {CurrentAthlete.PhoneNumber}");
-			_logger.LogInformation($"Birthday: {CurrentAthlete.Birthday}");
-			_logger.LogInformation($"Gender: {CurrentAthlete.Gender}");
+            LogInformation("OnPost");
 
-			// after this is called
-			if (ModelState.IsValid)
+            // after this is called
+            if (ModelState.IsValid)
 			{
 				// this class performs a get request to the index page
 				return RedirectToPage("./Index", CurrentAthlete);
@@ -37,5 +40,10 @@ namespace ProgrammingAssignment1UI.Pages.Athlete
 				return Page();
 			}
 		}
-	}
+
+        private void LogInformation(string methodName)
+        {
+            _logger.LogInformation($"{methodName} called with Word: {WordFromIndex}, Num: {NumFromIndex}");
+        }
+    }
 }

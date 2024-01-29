@@ -3,10 +3,24 @@
 @{
 }
 
+<ul id="send-get-with-parameters" class="nav-links">
+	<li><a asp-page="AddInfo" asp-route-numFromIndex="42" asp-route-wordFromIndex="Hello" title="Update athlete information">Update some words</a></li>
+	<li><a asp-page="AddInfo" asp-route-numFromIndex="24" asp-route-wordFromIndex="Goodbye" title="Update athlete information with different parameters">Update some other words</a></li>
+</ul>
+
 <h1>Current Athletes Registered</h1>
 
-@if(!string.IsNullOrEmpty(Model.CurrentAthlete.Name))
+@if (!string.IsNullOrEmpty(Model.CurrentAthlete.Name))
 {
-	<p>Name: @Model.CurrentAthlete.Name</p>
-	<p>Age@Model.CurrentAthlete.Birthday</p>
+	<div class="athlete-info">
+		<p>Name: @Model.CurrentAthlete.Name</p>
+		<p>Email: @Model.CurrentAthlete.Email</p>
+		<p>Gender: @Model.CurrentAthlete.Gender</p>
+		<p>PhoneNumber: @Model.CurrentAthlete.PhoneNumber</p>
+		<p>Birthday: @Model.CurrentAthlete.Birthday</p>
+	</div>
+}
+else
+{
+	<p>No athlete information has been entered yet.</p>
 }
