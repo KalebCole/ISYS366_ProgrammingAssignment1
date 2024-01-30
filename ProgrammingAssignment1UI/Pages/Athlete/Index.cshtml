@@ -13,6 +13,7 @@
 @if (!string.IsNullOrEmpty(Model.CurrentAthlete.Name))
 {
 	<div class="athlete-info">
+		<h2>Event: @Model.CurrentAthlete.Event</h2>
 		<p>Name: @Model.CurrentAthlete.Name</p>
 		<p>Email: @Model.CurrentAthlete.Email</p>
 		<p>Gender: @Model.CurrentAthlete.Gender</p>

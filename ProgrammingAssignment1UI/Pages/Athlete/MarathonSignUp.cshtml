@@ -22,7 +22,7 @@
 <h1>Marathon Registration Form</h1>
 
 <div id="post-then-redirect" style="padding: 20px">
-	<h2>Post to AddInfo and then redirect to Index</h2>
+	<h2>Post to MarathonSignUp page and then redirect to Index</h2>
 	<!-- This will post to the AddInfo page and then redirect to the Index page using a Get.
 	It is handled in the AddInfo.cshtml.cs onPost method. -->
 	<form method="post">
@@ -47,43 +47,9 @@
 				<label asp-for="CurrentAthlete.Gender">Gender:</label>
 				<input type="text" asp-for="CurrentAthlete.Gender" />
 			</div>
+			<input type="hidden" asp-for="CurrentAthlete.Event" value="Marathon">
 		</div>
 
 		<input type="submit" value="Register" />
 	</form>
 </div>
-
-
-
-
-
-<div id="get-to-index">
-	<h2>Get to Index</h2>
-	<form method="get" asp-page="Index">
-		<div id="registration-form">
-			<div class="mb-3">
-				<label asp-for="CurrentAthlete.Name">Name:</label>
-				<input type="text" asp-for="CurrentAthlete.Name" required />
-			</div>
-			<div class="mb-3">
-				<label asp-for="CurrentAthlete.Email">Email:</label>
-				<input type="text" asp-for="CurrentAthlete.Email" required />
-			</div>
-			<div class="mb-3">
-				<label asp-for="CurrentAthlete.PhoneNumber">Phone Number:</label>
-				<input type="text" asp-for="CurrentAthlete.PhoneNumber" />
-			</div>
-			<div class="mb-3">
-				<label asp-for="CurrentAthlete.Birthday">Birthday:</label>
-				<input type="text" asp-for="CurrentAthlete.Birthday" />
-			</div>
-			<div class="mb-3">
-				<label asp-for="CurrentAthlete.Gender">Gender:</label>
-				<input type="text" asp-for="CurrentAthlete.Gender" />
-			</div>
-		</div>
-
-		<input type="submit" value="Register" />
-	</form>
-</div>
-

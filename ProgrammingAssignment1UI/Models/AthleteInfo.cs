@@ -13,6 +13,7 @@
 
 		public String? Gender { get; set; }
 
-		// add a contact info property here (it'll be a ContactPerson object)
+		public String? Event { get; set; }
+
 	}
 }
