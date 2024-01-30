@@ -1,14 +1,14 @@
 ﻿@page
-@model IronManSignUpModel
+@model ProgrammingAssignment1UI.Pages.Athlete.DecathlonSignUpModel
 @{
 }
 
-<h1>Ironman Registration Form</h1>
 
-<div id="cross-post" style="padding: 20px">
-	<h2>Post to Index</h2>
-	<!-- This will post to the Index page using a Post. -->
-	<form method="post" asp-page="Index">
+<h1>Decathlon Registration Form</h1>
+
+<div id="get-to-index">
+	<h2>Get to Index</h2>
+	<form method="get" asp-page="Index">
 		<div id="registration-form">
 			<div class="mb-3">
 				<label asp-for="CurrentAthlete.Name">Name:</label>
@@ -24,7 +24,7 @@
 			</div>
 			<div class="mb-3">
 				<label asp-for="CurrentAthlete.Birthday">Birthday:</label>
-				<input type="date" asp-for="CurrentAthlete.Birthday" />
+				<input type="text" asp-for="CurrentAthlete.Birthday" />
 			</div>
 			<div class="mb-3">
 				<label asp-for="CurrentAthlete.Gender">Gender:</label>
